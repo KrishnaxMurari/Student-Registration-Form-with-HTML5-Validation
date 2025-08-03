@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Banking UI</title>
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container and card */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    /* Balance Display */
+    .balance {
+      font-size: 2rem;
+      color: green;
+      margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px 0;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .deposit {
+      background-color: #4CAF50;
+    }
+
+    .deposit:hover {
+      background-color: #45a049;
+    }
+
+    .withdraw {
+      background-color: #f44336;
+    }
+
+    .withdraw:hover {
+      background-color: #da190b;
+    }
+
+    /* Responsive */
+    @media (max-width: 400px) {
+      .card {
+        padding: 20px;
+      }
+
+      .balance {
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="balance">$0</div>
+      <button class="btn deposit">Deposit</button>
+      <button class="btn withdraw">Withdraw</button>
+    </div>
+  </div>
+</body>
+</html>

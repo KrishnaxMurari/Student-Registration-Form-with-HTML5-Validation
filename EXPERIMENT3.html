@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <style>
+    :root {
+      --header-bg: #4caf50;
+      --header-text: #ffffff;
+      --sidebar-bg: #f0f0f0;
+      --sidebar-text: #333333;
+      --main-bg: #ffffff;
+      --main-text: #000000;
+      --footer-bg: #4caf50;
+      --footer-text: #ffffff;
+      --link-color: #4a2fcf;
+      --link-hover: #361f9f;
+    }
+
+    .container:has(#switch:checked) {
+      --header-bg: #222;
+      --header-text: #fff;
+      --sidebar-bg: #2c2c2c;
+      --sidebar-text: #ddd;
+      --main-bg: #1e1e1e;
+      --main-text: #eee;
+      --footer-bg: #222;
+      --footer-text: #fff;
+      --link-color: #9f7cf1;
+      --link-hover: #bf9ff3;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+      grid-template-rows: 60px 1fr 40px;
+      grid-template-columns: 200px 1fr;
+      height: 100vh;
+      background-color: var(--main-bg);
+      color: var(--main-text);
+    }
+
+    header {
+      grid-area: header;
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+    }
+
+    aside {
+      grid-area: sidebar;
+      background-color: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 1rem;
+    }
+
+    main {
+      grid-area: main;
+      background-color: var(--main-bg);
+      color: var(--main-text);
+      padding: 1rem;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+    }
+
+    .theme-label {
+      cursor: pointer;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 0.3rem;
+    }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+    <div>Admin Dashboard</div>
+      <label for="switch" class="theme-label">
+      <input type="checkbox" id="switch" /> Dark Mode
+      </label>
+    </header>
+
+    <aside>
+      <nav>
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <h1>Welcome, Admin!</h1>
+      <p>This is the main content area. Add charts, tables, or reports here.</p>
+    </main>
+
+    <footer>&copy; 2025 Admin Panel</footer>
+  </div>
+</body>
+</html>
